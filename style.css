@@ -1,0 +1,339 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent horizontal scroll */
+  display: block;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.generator-title {
+  text-align: center;
+  position: absolute;
+  top: 20%; /* Place the title at the vertical center of the viewport */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+}
+
+.generator-title h1 {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  font-size: 3rem;
+  color: #ff9900; /* Customize the color */
+}
+
+
+.background {
+  position: fixed;
+  top: 2px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+.cloud {
+  position: absolute;
+  width: 100px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50px;
+  opacity: 0.7;
+  animation: moveRight linear infinite;
+}
+
+.cloud1 {
+  top: 10px;
+  left: 30%; /* Start from the left of the screen */
+  animation-duration: 100s; /* Adjust the animation duration for cloud1 */
+  animation-name: moveRight; /* Use the moveRight animation for cloud1 */
+}
+
+.cloud2 {
+  top: 20px;
+  left: 80%;
+  animation-duration: 150s; /* Default animation duration for cloud2 */
+  animation-name: moveLeft; /* Use the moveLeft animation for cloud2 */
+}
+
+.cloud3 {
+  top: 15px;
+  left: 10%; /* Start from the right of the screen */
+  animation-duration: 70s; /* Adjust the animation duration for cloud3 */
+  animation-name: moveRight; /* Use the moveRight animation for cloud3 */
+}
+
+.cloud4 {
+  top: 5px;
+  left: 70%;
+  animation-duration: 90s;
+  animation-name: moveLeft;
+}
+
+.cloud5 {
+  top: 8px;
+  left: 10%;
+  animation-duration: 50s;
+  animation-name: moveLeft;
+}
+
+.cloud6 {
+  top: 20px;
+  left: 0;
+  animation-duration: 40s;
+  animation-name: moveRight;
+}
+
+@keyframes moveRight {
+  to {
+    transform: translateX(110%);
+  }
+}
+
+@keyframes moveLeft {
+  to {
+    transform: translateX(-110%);
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.quote-box {
+  font-family: "Calibri", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 40px;
+}
+
+.flower-box {
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  width: fit;
+  height: 150px;
+  background-color: white;
+  border: 2px solid #ccc;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.flower-box::before,
+.flower-box::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f06, transparent);
+  animation: shimmer 3s infinite linear;
+}
+
+.flower-box::before {
+  top: -50px;
+  left: -50px;
+}
+
+.flower-box::after {
+  bottom: -50px;
+  right: -50px;
+}
+
+.bottom-right-flower {
+  position: absolute;
+  bottom: 50px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+}
+
+.petal {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff69b4;
+  border-radius: 50% 50% 0 0;
+}
+
+.petal1 {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+}
+
+.petal2 {
+  top: 25%;
+  left: 80%;
+  transform: translateX(-50%) rotate(72deg);
+}
+
+.petal3 {
+  top: 60%;
+  left: 70%;
+  transform: translateX(-50%) rotate(142deg);
+}
+
+.petal4 {
+  top: 60%;
+  left:  30%;
+  transform: translateX(-50%) rotate(218deg);
+}
+
+.petal5 {
+  top: 25%;
+  left: 20%;
+  transform: translateX(-50%) rotate(288deg);
+}
+
+.center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pencil-container {
+  position: absolute;
+  width: 200px;
+  height: 400px;
+}
+
+.pencil {
+  position: absolute;
+  transform: translateX(-50%);
+  animation: pencilMove 4s linear infinite alternate;
+}
+
+.pencil-tip {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 80px solid #f3ce16;
+}
+
+.pencil-body {
+  width: 40px;
+  height: 300px;
+  background-color: #f4d83c;
+}
+
+@keyframes pencilMove {
+  0%, 100% {
+    transform: translateX(-110%);
+  }
+  50% {
+    transform: translateX(110%);
+  }
+}
+
+.action-button {
+  font-family: "Helvetica", sans-serif;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s, transform 0.2s;
+  animation: changeButtonColor 5s infinite ;
+}
+
+.action-button:hover {
+  background-color: #31b0d5;
+  transform: scale(1.05);
+}
+
+#copy-status {
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  color: #d9534f; /* Set the color to match the copy button */
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+#quote-text {
+  font-family: "Times New Roman", serif;
+  animation: fadeIn 0.5s ease-in-out;
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+#quote-author {
+  font-family: "Georgia", serif;
+  font-size: 18px;
+  color: #555;
+}
+
+
+@keyframes changeColor {
+  0%, 100% {
+    background: linear-gradient(to left, #FF00FF, #00FFFF, #00FF00, #FF00FF);
+  }
+  25% {
+    background: linear-gradient(to left, #00FFFF, #FF00FF, #00FFFF, #00FF00);
+  }
+  50% {
+    background: linear-gradient(to left, #FF00FF, #00FFFF, #00FF00, #FF00FF);
+  }
+  75% {
+    background: linear-gradient(to left, #00FFFF, #FF00FF, #00FFFF, #00FF00);
+  }
+}
+
+#new-quote:hover, #share-twitter:hover, #copy-quote:hover {
+  animation: changeButtonColor 5s infinite ;
+}
+
+@keyframes changeButtonColor {
+  0%, 100% {
+    background-color: #5bc0de;
+  }
+  25% {
+    background-color: #2ead0b;
+  }
+  50% {
+    background-color: #d9534f;
+  }
+  75% {
+    background-color: #688fb1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.4;
+  }
+}
